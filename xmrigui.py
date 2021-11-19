@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+#Libraies
 import gi, os, json, sys, dbus, requests
 import dbus.service
 from dbus.mainloop.glib import DBusGMainLoop
@@ -10,7 +11,7 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('AppIndicator3', '0.1')
 from gi.repository import Gtk, Gdk, GdkPixbuf, AppIndicator3
 
-
+#dbus service
 class DBUSService(dbus.service.Object):
     def __init__(self, window):
         self.window = window
@@ -65,21 +66,7 @@ def call_instance():
     except dbus.exceptions.DBusException:
         exit(-1)
 
-
-class PoolWarningDialog(Gtk.MessageDialog):
-    def __init__(self, parent):
-        super().__init__(title="Pool Warning", transient_for=parent, flags=0)
-        self.add_buttons(Gtk.STOCK_OK, Gtk.ResponseType.OK)
-
-        self.set_default_size(150, 100)
-
-        label = Gtk.Label(label="You can't mine on MineXMR, SupportXMR or NanoPool!\nPlease change the pool!")
-
-        box = self.get_content_area()
-        box.add(label)
-        self.show_all()
-
-
+#Window
 class Window(Gtk.Window):
     def __init__(self):
         super().__init__()
@@ -343,21 +330,21 @@ class Window(Gtk.Window):
         if state:
             if self.pool_warning(self.widgets[self.profiles[0]]['pool_entry'].get_text()):
                 self.start_mining(self.profiles[0])
-            else: widgets.set_active(False)
+            else: self.widgets.set_active(False)
         else: self.stop_mining(self.profiles[0])
     
     def on_mine_switch1(self, widget, state):
         if state:
             if self.pool_warning(self.widgets[self.profiles[1]]['pool_entry'].get_text()):
                 self.start_mining(self.profiles[1])
-            else: widgets.set_active(False)
+            else: self.widgets.set_active(False)
         else: self.stop_mining(self.profiles[1])
     
     def on_mine_switch2(self, widget, state):
         if state:
             if self.pool_warning(self.widgets[self.profiles[2]]['pool_entry'].get_text()):
                 self.start_mining(self.profiles[2])
-            else: widgets.set_active(False)
+            else: self.widgets.set_active(False)
         else: self.stop_mining(self.profiles[2])
     
     def on_save(self, widget, state=None):
@@ -383,15 +370,6 @@ class Window(Gtk.Window):
     def profile2_menu(self, widget):
         if self.config[self.profiles[2]]['mine']: self.widgets[self.profiles[2]]['mine_switch'].set_active(False)
         else: self.widgets[self.profiles[2]]['mine_switch'].set_active(True)
-
-    def pool_warning(self, current_pool):
-        for pool in self.pools:
-            if pool in current_pool:
-                dialog = PoolWarningDialog(self)
-                dialog.run()
-                dialog.destroy()
-                return False
-        return True
 
     def load_data(self):
         self.user = os.getlogin()
@@ -479,7 +457,7 @@ class Window(Gtk.Window):
 }
 '''
 
-
+#AppIdicator
 class AppIndicator():
     def __init__(self, window):
         self.window = window
@@ -522,7 +500,7 @@ class AppIndicator():
             self.window.add(self.window.box)
             self.window.show_all()
 
-
+#Start Programm
 def main():
     win = Window()
     win.connect('destroy', win.close)
