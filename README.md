@@ -39,7 +39,7 @@ or if you want deb package:
 
 ## Custom cpuminer-gr-avx2
 
-If you want to use custom version of XMRig you need to replace `xmrig` with the new one and than reinstall XMRiGUI or replace `/opt/rtmgui/cpuminer` and restart the app.
+If you want to use custom version of cpuminer-gr-avx2 you need to replace `cpuminer` with the new one and than reinstall RTMGUI or replace `/opt/rtmgui/cpuminer` and restart the app.
 <br>
 <br>
 
