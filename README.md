@@ -1,45 +1,12 @@
-# XMRiGUI
+# RTMGUI
 
-XMRiGUI is free and open-source crypto miner for Linux. It uses [XMRig](http://github.com/xmrig/xmrig) for mining and GTK3 for GUI.
+RTMGUI is free and open-source crypto miner for Linux. It uses [cpuminer-gr-avx2](https://github.com/WyvernTKC/cpuminer-gr-avx2) for mining and GTK3 for GUI.
 
-![Preview of XMRiGUI](preview.png)
+![Preview of RTMGUI](preview.png)
 <br>
 <br>
 
-## Features
-
-Coins:
-* Monero
-* Ravencoin
-* Uplexa
-* Chukwa
-* Chukwa v2
-* CCX
-* Keva
-* Dero
-* Talleo
-* Safex
-* ArQmA
-* NINJA
-
-Other cryptos **may** work if the algorithm is the same.
-
-Mining backends:
-* **CPU**
-* **OpenCL** for AMD GPUs
-* **CUDA** for NVIDIA GPUs
-<br>
-<br>
-
-If you want this to work on arm processor like on Raspberry Pi, you need to build [XMRig](https://github.com/xmrig/xmrig) yourself, do [Custom XMRig](https://github.com/LinuxHeki/XMRiGUI#custom-xmrig) and than [build this](https://github.com/LinuxHeki/XMRiGUI#build-from-source).
-
-If OpenCL doesn't work try to install [this driver](https://github.com/Diolinux/amd-opencl-pro-linux-resolve).
-
-For CUDA to work you need to build [Cuda plugin](http://github.com/xmrig/xmrig-cuda#linux-usage) and put it into `/opt/xmrigui/`
-
-**I NEVER TESTED OPENCL OR CUDA BECAUSE I DON'T HAVE THAT GOOD GPU! PLEASE TEST AND IF SOMETHING GOES WRONG PLEASE REPORT!**
-<br>
-<br>
+## Usage
 
 Command line options:
 * `start` for start mining
@@ -51,7 +18,7 @@ Command line options:
 
 ## Build from source
 
-If you want to build XMRiGUI from source, you'll need to have:
+If you want to build RTMGUI from source, you'll need to have:
 * python3
 * gtk3
 * pyinstaller
@@ -70,26 +37,16 @@ or if you want deb package:
 <br>
 <br>
 
-## Custom XMRig
+## Custom cpuminer-gr-avx2
 
-If you want to use custom version of XMRig you need to replace `xmrig` with the new one and than reinstall XMRiGUI or replace `/opt/xmrigui/xmrig` and restart the app.
+If you want to use custom version of XMRig you need to replace `xmrig` with the new one and than reinstall XMRiGUI or replace `/opt/rtmgui/cpuminer` and restart the app.
 <br>
 <br>
 
-## Contribute
-
-### Logo
-
-If you are good at making logos, please make simple, monero like logo for XMRiGUI!
-
-### Features
-
-If you want new feature, please contact me and I will probably added it!
-
-### Donate
+## Donate
 
 If you want to support me, please mine for some hours with my wallet and don't forget to set custom password ; ). Thank you!
 <br>
 Monero address: `45xutTV4zsmBWTiEwxjt5z2XpPyKMf4iRc2WmWiRcf4DVHgSsCyCyUMWTvBSZjCTwP9678xG6Re9dUKhBScPmqKN6DUXaHF`
-<br>
-Pool (optional): `de.monero.herominers.com:1111`
+
+Raptoreum address: `RWMf4o2nj7MtVRUtPnJB5FJ7fumHPeENFb` or `RKWdu5XxFKjpcfZqz1kKqFmaF7JRsecM5y`

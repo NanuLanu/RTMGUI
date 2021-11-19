@@ -1,0 +1,7 @@
+Package: rtmgui
+Source: rtmgui
+Version: 1.0-0
+Architecture: amd64
+Maintainer: NanuLanu <stanley.kite@outlook.com>
+Description: GUI for cpuminer-gr-avx2 crypto miner
+Depends: libc6 (>= 2.14), zlib1g (>= 1:1.1.4), libuv1-dev, gir1.2-appindicator3-0.1
