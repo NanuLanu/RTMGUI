@@ -27,13 +27,21 @@ If you want to build RTMGUI from source, you'll need to have:
 <br>
 <br>
 
-Build:
+### Build Binary
 
 `make && sudo make install`
 
 or if you want deb package:
 
 `make && make deb`
+
+### Build Python
+
+`sudo make py-install`
+
+or if you want deb package:
+
+`make py-deb`
 <br>
 <br>
 
