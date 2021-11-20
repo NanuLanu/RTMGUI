@@ -1,7 +1,7 @@
 .PHONY: build install uninstall clean deb py-install py-deb
 
-package = rtmgui_1.0-0_amd64
-py-package = rtmgui_1.0-0-python_amd64
+package = rtmgui_1.1-0_amd64
+py-package = rtmgui_1.1-0-python_amd64
 
 build:
 	pyinstaller --onefile -w rtmgui.py
