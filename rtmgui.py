@@ -109,11 +109,12 @@ class Window(Gtk.Window):
             args += f' --user={self.config[profile]["user"]}'
             args += f' --pass={self.config[profile]["password"]}'
             args += f' --donation={self.config[profile]["donate"]}'
-            if True: args += ' --tune-config=/opt/rtmgui/tune_config'
+            args += ' --tune-config=/opt/rtmgui/tune_config'
+            args += ' --algo=gr'
             if (self.config[profile]['threads'] != '0') or (not self.config[profile]['threads']): args += f' --threads={self.config[profile]["threads"]}'
         if self.config[profile]['args']: args += f' {self.config["args"]}'
 
-        os.system(self.cpuminer_path + ' --background --algo=gr' + args)
+        os.system(self.cpuminer_path + ' --background' + args)
     
     def stop_mining(self, profile, restart=True, save=True):
         os.system('killall cpuminer')
