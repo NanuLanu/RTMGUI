@@ -278,8 +278,8 @@ class Window(Gtk.Window):
         self.stack.add_titled(self.widgets[self.profiles[2]]['box'], self.profiles[2], 'Profile 3')
         self.stack_switcher = Gtk.StackSwitcher()
         self.stack_switcher.set_stack(self.stack)
-        self.box.pack_start(self.stack_switcher, True, False, 0)
-        self.box.pack_start(self.stack, True, False, 0)
+        self.box.pack_start(self.stack_switcher, False, False, 0)
+        self.box.pack_start(self.stack, False, False, 0)
 
     def on_mine_switch0(self, widget, state):
         if state:
