@@ -5,6 +5,7 @@ py-package = rtmgui_1.1-0-python_amd64
 
 build:
 	pyinstaller --onefile -w rtmgui.py
+	./detect_cpu.sh
 
 install:
 	cp dist/rtmgui /usr/local/bin/
@@ -25,6 +26,7 @@ clean:
 	rm -rf build
 	rm -rf dist
 	rm -rf rtmgui.spec
+	rm -rf cpuminer
 
 deb:
 	mkdir -p $(package)/usr/local/bin/
@@ -42,6 +44,7 @@ deb:
 	rm $(package)/usr/share/applications/*
 
 py-install:
+	./detect_cpu.sh
 	cp rtmgui.py /usr/local/bin/rtmgui
 	mkdir -p /opt/rtmgui
 	cp cpuminer /opt/rtmgui/
@@ -50,6 +53,7 @@ py-install:
 	cp rtmgui.desktop /usr/share/applications/
 
 py-deb:
+	./detect_cpu.sh
 	mkdir -p $(py-package)/usr/local/bin/
 	mkdir -p $(py-package)/opt/rtmgui/
 	mkdir -p $(py-package)/usr/share/icons/hicolor/256x256/apps/
