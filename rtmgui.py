@@ -114,10 +114,10 @@ class Window(Gtk.Window):
             if (self.config[profile]['threads'] != '0') or (not self.config[profile]['threads']): args += f' --threads={self.config[profile]["threads"]}'
         if self.config[profile]['args']: args += f' {self.config["args"]}'
 
-        os.system(self.cpuminer_path + ' --background' + args)
+        os.system('pkexec ' + self.cpuminer_path + ' --background' + args)
     
     def stop_mining(self, profile, restart=True, save=True):
-        os.system('killall cpuminer')
+        os.system('pkexec killall cpuminer')
 
         if restart:
             if profile == self.profiles[0] and self.config[self.profiles[1]]['mine']: self.start_mining(self.profiles[1], save=False)
