@@ -14,12 +14,14 @@ install:
 	mkdir -p /usr/share/icons/hicolor/256x256/apps
 	cp rtmgui.png /usr/share/icons/hicolor/256x256/apps/
 	cp rtmgui.desktop /usr/share/applications/
+	cp org.freedesktop.policykit.rtmgui.policy /usr/share/polkit-1/actions/
 
 uninstall:
 	rm /usr/local/bin/rtmgui
 	rm -rf /opt/rtmgui
 	rm /usr/share/icons/hicolor/256x256/apps/rtmgui.png
 	rm /usr/share/applications/rtmgui.desktop
+	rm /usr/share/polkit-1/actions/org.freedesktop.policykit.rtmgui.policy
 
 clean:
 	rm -rf __pycache__
@@ -51,6 +53,7 @@ py-install:
 	mkdir -p /usr/share/icons/hicolor/256x256/apps
 	cp rtmgui.png /usr/share/icons/hicolor/256x256/apps/
 	cp rtmgui.desktop /usr/share/applications/
+	cp org.freedesktop.policykit.rtmgui.policy /usr/share/polkit-1/actions/
 
 py-deb:
 	./detect_cpu.sh
