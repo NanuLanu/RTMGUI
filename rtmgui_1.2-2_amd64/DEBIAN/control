@@ -1,6 +1,6 @@
 Package: rtmgui
 Source: rtmgui
-Version: 1.2-1
+Version: 1.2-2
 Architecture: amd64
 Maintainer: NanuLanu <stanley.kite@outlook.com>
 Description: GUI for cpuminer-gr-avx2 crypto miner

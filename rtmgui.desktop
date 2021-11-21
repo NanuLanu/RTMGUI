@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Version=1.2-1
+Version=1.2-2
 Type=Application
 Terminal=false
-Exec=/usr/local/bin/rtmgui
+Exec=pkexec /usr/local/bin/rtmgui
 Name=RTMGUI
 Icon=/usr/share/icons/hicolor/256x256/apps/rtmgui.png
