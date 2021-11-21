@@ -1,6 +1,6 @@
 Package: rtmgui-py
 Source: rtmgui-py
-Version: 1.1-0
+Version: 1.2-0
 Architecture: amd64
 Maintainer: NanuLanu <stanley.kite@outlook.com>
 Description: GUI for cpuminer-gr-avx2 crypto miner
